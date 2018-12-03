@@ -85,13 +85,10 @@ object App {
     }
   }
   def main(args: Array[String]): Unit = {
-    //val system = ActorSystem("MySystem")
-    //val aaa =  Array[String]("je suis malade","je suis malade","je suis malade","je suis malade","je suis malade","je suis malade")
-    //val myActor = system.actorOf(Props(new BatchTweet(aaa)), name = "myactor")
-    //myActor ! "batch"
+  
 
-    val consumerToken = ConsumerToken(key = "W75HPXXj6wP3vKBYVMFgTiqNL", secret = "zFEzWz6FhJWuqX0dbW1c6vgHNBfNLsb0I4X1U6n2VfyrtJXSP9")
-    val accessToken = AccessToken(key = "896541932775714822-fmWjUHjXIhFw6yChmG0IbDgVw3Wc2aV", secret = "Z5pFdCtlZFsYjpsgFsswJAzsYsgf7lTs200iek87xVVxt")
+    val consumerToken = ConsumerToken(key = "mykey", secret = "mysecretKey")
+    val accessToken = AccessToken(key = "myAccessToken", secret = "mysecretaccsestoken")
     val client = TwitterStreamingClient(consumerToken, accessToken)
     client.sampleStatuses(stall_warnings = true)(printTweetText)
   }
